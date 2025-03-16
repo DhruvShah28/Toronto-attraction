@@ -13,47 +13,35 @@ function curl_get_contents( $url )
 }
 
 function pre( $data )
-{
-  
+{  
   echo '<pre>';
   print_r( $data );
-  echo '</pre>';
-  
+  echo '</pre>';  
 }
 
 function secure()
-{
-  
+{  
   if( !isset( $_SESSION['id'] ) )
-  {
-    
-    header( 'Location: /' );
-    die();
-    
-  }
-  
+  {    
+    set_message("You must first log in to view this page.");
+    header( 'Location: index.php' );
+    die();    
+  }  
 }
 
 function set_message( $message )
-{
-  
-  $_SESSION['message'] = $message;
-  
+{  
+  $_SESSION['message'] = $message;  
 }
 
 function get_message()
-{
-  
+{  
   if( isset( $_SESSION['message'] ) )
-  {
-    
-    echo '<p style="padding: 0 1%;" class="error">
-        <i class="fas fa-exclamation-circle"></i> 
+  {    
+    echo '<div class="container-fluid text-center bg-warning-subtle fs-4 p-3">
         '.$_SESSION['message'].'
-      </p>
-      <hr>';
-    unset( $_SESSION['message'] );
-    
-  }
-  
+      </div>';
+
+    unset( $_SESSION['message'] );    
+  }  
 }

@@ -11,13 +11,14 @@ include( 'admin/includes/functions.php' );
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toronto Attractions</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
     
     <!-- <h1 class="mb-4">Toronto Attractions</h1> -->
 
-    <nav class="navbar navbar-expand-lg bg-warning-subtle mb-4 p-4">
+    <nav class="navbar navbar-expand-sm bg-warning-subtle mb-4 p-4">
         <div class="container-fluid">
             <a class="navbar-brand fs-2 text-success" href="#">Toronto Attractions</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -63,9 +64,6 @@ include( 'admin/includes/functions.php' );
         ?>
     </main>
 
-    <footer class="container-fluid mt-4 text-bg-secondary p-3 text-center">
-        <div>&copy; 2025 Toronto Attractions. All rights reserved.</div>
-    </footer>
-
-</body>
-</html>
+<?php
+include( 'admin/includes/footer.php' );
+?>

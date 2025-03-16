@@ -1,70 +1,53 @@
 <?php
-
 include( 'includes/connection.php' );
 include( 'includes/config.php' );
 include( 'includes/functions.php' );
+include( 'includes/header.php' );
 
 if( isset( $_POST['email'] ) )
-{
-  
+{  
   $query = 'SELECT *
     FROM users
     WHERE email = "'.$_POST['email'].'"
     AND password = "'.md5( $_POST['password'] ).'"
     AND active = "Yes"
     LIMIT 1';
-  $result = mysqli_query( $connect, $query );
+  $result = mysqli_query( $connect, $query ); // a result set (like a table of data)
   
-  if( mysqli_num_rows( $result ) )
-  {
+  if( mysqli_num_rows( $result ) ) // counts the number of row
+  {   
+    $record = mysqli_fetch_assoc( $result ); // change to array
     
-    $record = mysqli_fetch_assoc( $result );
-    
+    // security
     $_SESSION['id'] = $record['id'];
     $_SESSION['email'] = $record['email'];
     
     header( 'Location: dashboard.php' );
-    die();
-    
+    die();    
   }
   else
-  {
-    
+  {    
     set_message( 'Incorrect email and/or password' );
-    
     header( 'Location: index.php' );
-    die();
-    
-  } 
-  
+    die();    
+  }   
 }
-
-include( 'includes/header.php' );
-
 ?>
 
-<div style="max-width: 400px; margin:auto">
-
+<main class="container d-flex justify-content-center p-5 m-5">
   <form method="post">
-
-    <label for="email">Email:</label>
-    <input type="text" name="email" id="email">
-
-    <br>
-
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password">
-
-    <br>
-
-    <input type="submit" value="Login">
-
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" name="email" id="email">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" class="form-control" name="password" id="password">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Login">
   </form>
+</main>
   
-</div>
-
 <?php
-
 include( 'includes/footer.php' );
-
 ?>
