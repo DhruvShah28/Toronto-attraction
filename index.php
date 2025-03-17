@@ -33,11 +33,11 @@ include( 'admin/includes/functions.php' );
         </div>
     </nav>
 
-    <main class="container row row-cols-1 row-cols-md-4 g-4">
+    <main class="container d-flex justify-content-center">
+        <div class="row row-cols-1 row-cols-md-4 g-4">
         <?php
         $query = "SELECT * FROM `attractions_description`";
         $attractions = mysqli_query($connect, $query);
-    
         foreach($attractions as $attraction){
             echo '<div class="col">
                 <div class="card h-100">
@@ -62,6 +62,7 @@ include( 'admin/includes/functions.php' );
             </div>';
         }
         ?>
+        </div>
     </main>
 
 <?php
