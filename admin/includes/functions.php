@@ -24,7 +24,7 @@ function secure()
   if( !isset( $_SESSION['id'] ) )
   {    
     set_message("You must first log in to view this page.");
-    header( 'Location: index.php' );
+    header( 'Location: login.php' );
     die();    
   }  
 }
