@@ -68,7 +68,7 @@ secure();
                                 <input type="hidden" name="id" value="' . $attraction['id'] . '">
                                 <button type="submit" class="btn edit-btn">Edit</button>
                             </form>
-                            <button type="button" class="btn delete-btn" 
+                            <button type="button" class="btn open-delete-modal delete-btn" 
                                         data-id=" '. htmlspecialchars($attraction['id']) .'" 
                                         data-name=" '. htmlspecialchars($attraction['name']) .'" 
                                         data-bs-toggle="modal" 

@@ -3,7 +3,11 @@
 
     if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id'])) {
         $id = $_GET['id'];    
-        $query = 'SELECT * FROM attractions_description AS ad INNER JOIN attractions_contact AS ac ON ad.id = ac.attraction_id';
+        $query = "SELECT * FROM attractions_description AS ad 
+          INNER JOIN attractions_contact AS ac 
+          ON ad.id = ac.attraction_id 
+          WHERE ad.id = $id";
+          
         $result = mysqli_query($connect, $query);
         
         if ($result->num_rows > 0) {
