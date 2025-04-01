@@ -34,7 +34,7 @@
             category='$category', 
             `name`='$name', 
             `description`='$description' 
-            WHERE attraction_id=$id";
+            WHERE id=$id";
 
             $result1 = mysqli_query($connect, $query1);
 
@@ -96,7 +96,7 @@
         </div>
     <?php endif; ?>
     <h1 class="text-center mb-4">Edit Attraction</h1>
-    <form action="addattraction.php" method="POST">
+    <form action="" method="POST">
         <input type="hidden" name="id" value="<?php echo $attraction['attraction_id']; ?>">
         <fieldset>
         <legend >Description Details</legend>
@@ -106,9 +106,9 @@
                 <option value="XX" disabled selected>Select an Option</option>
                 <option value="Landmark">Landmark</option>
                 <option value="Museum">Museum</option>
-                <option value="NP">Nature/ Park</option>
+                <option value="Nature/ Park">Nature / Park</option>
                 <option value="Attraction">Attraction</option>
-                <option value="GC">Garden / Conservatory</option>
+                <option value="Garden / Conservatory">Garden / Conservatory</option>
             </select>
         </div>
         <div >
@@ -137,7 +137,7 @@
         </div>
         <div >
             <label class="form-label">Postal Code</label>
-            <input type="text" name="postalCode" class="form-control" value="<?php echo htmlspecialchars($attraction['postal_code']); ?>" >
+            <input type="text" name="postal_code" class="form-control" value="<?php echo htmlspecialchars($attraction['postal_code']); ?>" >
         </div>
         <div >
             <label class="form-label">City</label>
@@ -145,11 +145,11 @@
         </div>
         <div >
             <label class="form-label">Longitude</label>
-            <input type="text" name="longitude" class="form-control" value="<?php echo htmlspecialchars($attraction['Longitude']); ?>" >
+            <input type="text" name="Longitude" class="form-control" value="<?php echo htmlspecialchars($attraction['Longitude']); ?>" >
         </div>
         <div >
             <label class="form-label">Latitude</label>
-            <input type="text" name="latitude" class="form-control" value="<?php echo htmlspecialchars($attraction['Latitude']); ?>" >
+            <input type="text" name="Latitude" class="form-control" value="<?php echo htmlspecialchars($attraction['Latitude']); ?>" >
         </div>
         </fieldset>
         
