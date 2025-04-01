@@ -82,9 +82,9 @@
                 <option value="XX" disabled selected>Select an Option</option>
                 <option value="Landmark">Landmark</option>
                 <option value="Museum">Museum</option>
-                <option value="NP">Nature/ Park</option>
+                <option value="Nature/ Park">Nature/ Park</option>
                 <option value="Attraction">Attraction</option>
-                <option value="GC">Garden / Conservatory</option>
+                <option value="Garden / Conservatory">Garden / Conservatory</option>
             </select>
         </div>
         <div >
